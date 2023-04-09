@@ -1,0 +1,76 @@
+#spring:
+#  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: "jdbc:mysql://localhost:3306/picture_saver?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
+#    username: root
+#    password: onepiece1
+#
+#  servlet:
+#    multipart:
+#      max-file-size: 1MB
+#      max-request-size: 5MB
+#  mvc:
+#    hiddenmethod:
+#      filter:
+#        enabled: true
+#    sql:
+#      init:
+#        mode: always
+#
+#  jpa:
+#    # Choose either MySQL 8 or MySQL 5 below
+#    # For MySQL 8
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    #For MySQL 5
+#    #database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    hibernate:
+#      ddl-auto: create-drop
+#    open-in-view: false
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    defer-datasource-initialization: true
+#
+#security:
+#  oauth2:
+#    client:
+#      registration:
+#        facebook:
+#          client-id: your-client-id-here
+#          client-secret: your-secret-here
+#  #Cloudinary Properties
+#  #cloudinary:
+#  #api-key:
+#  #api-secret:
+#  #cloud-name:
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/pic_saver_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${MYSQL_USER:root}
+    password: onepiece1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  sql:
+    init:
+      mode: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 8081
+
+PictureSaver:
+  admin:
+    defaultpass: ${DEFAULT_PASS:test}

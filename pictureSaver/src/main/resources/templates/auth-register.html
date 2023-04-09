@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head th:replace="~{fragments/head}"></head>
+
+
+<body>
+
+<div>
+    <nav th:replace="~{fragments/navigation}"></nav>
+</div>
+
+
+<form th:method="POST"
+      th:action="@{/users/register}"
+      th:object="${userRegisterForm}"
+      class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+
+    <div class="flex-item">
+        <div>
+
+            <label th:for="firstName"
+                   class="fa-solid fa-user">First Name</label>
+
+            <input type="text"
+                   th:field="*{firstName}"
+                   class="form-control"
+                   placeholder="First name"/>
+
+            <p th:if="${#fields.hasErrors('firstName')}"
+               class="errors alert alert-danger">
+                First name is required.
+            </p>
+
+        </div>
+
+        <div class="flex-item">
+
+            <label th:for="lastName"
+                   class="fa-solid">Last Name</label>
+
+            <input th:field="*{lastName}"
+                   class="form-control"
+                   placeholder="Last name"/>
+
+            <p th:if="${#fields.hasErrors('lastName')}"
+               class="errors alert alert-danger">
+                Last name is required.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <div>
+
+            <label th:for="email"
+                   class="fa-solid">
+                Username
+            </label>
+
+            <input th:field="*{email}"
+                   class="form-control"
+                   placeholder="Email"
+                   th:value="*{email}"/>
+
+            <p th:if="${#fields.hasErrors('email')}"
+               class="errors alert alert-danger">
+                Valid email is required.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex-item">
+        <div>
+            <label for="password"
+                   class="fa-solid">
+                Password
+            </label>
+            <input id="password"
+                   name="password"
+                   type="password"
+                   class="form-control"
+                   placeholder="Password"/>
+
+            <p th:if="${#fields.hasErrors('password')}"
+               class="errors alert alert-danger">
+                Password is required.
+            </p>
+        </div>
+
+        <div class="flex-item">
+
+            <label for="confirmPassword"
+                   class="fa-solid">
+                Confirm Password
+            </label>
+
+            <input id="confirmPassword"
+                   name="confirmPassword"
+                   type="password"
+                   min="2"
+                   max="20"
+                   class="form-control"
+                   placeholder="Password"/>
+
+            <p th:if="${#fields.hasErrors('confirmPassword')}"
+               class="errors alert alert-danger">
+                Passwords does not match.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="link-style">
+        <input type="submit" class="btn link-style" value="Register"/>
+    </div>
+
+
+</form>
+
+</body>
+
+
+</html>
