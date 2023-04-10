@@ -1,0 +1,339 @@
+@import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300&family=Roboto&display=swap");
+@import url("./reset.css");
+
+html {
+  font-family: "Overpass", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+/* main styles */
+
+body {
+  background-color: azure;
+}
+
+.flex {
+  display: flex;
+}
+
+.bio {
+  line-height: 1.2rem;
+  font-style: italic;
+}
+
+#hover:hover {
+  color: purple;
+  transition: ease-in-out 0.15s;
+}
+
+.link-style {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.first-article,
+.team,
+.testim-group,
+footer {
+  margin: 0rem 2.5rem 0;
+}
+
+.first-article,
+.line-div,
+.team,
+footer {
+  padding: 0 7rem;
+}
+
+/* Header */
+
+header {
+  justify-content: space-between;
+  padding: 1rem 7rem 5rem;
+  align-items: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo h2 {
+  text-transform: uppercase;
+  font-size: 0.71rem;
+  font-weight: 500;
+}
+
+.logo .purple-h1 {
+  color: purple;
+  font-weight: bold;
+  font-size: 2.55rem;
+  padding-bottom: 0.3rem;
+}
+
+.main-nav .nav-container {
+  gap: 2rem;
+}
+
+.main-nav .nav-container li a {
+  font-size: 1.1rem;
+}
+
+/* first article */
+
+.first-article {
+  position: relative;
+  padding-bottom: 3rem;
+  margin-right: 10rem;
+}
+
+.first-article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.first-article p {
+  line-height: 1.3rem;
+  font-weight: 600;
+  width: 66%;
+}
+
+.first-article button {
+  margin-top: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8%;
+
+  background-color: transparent;
+}
+
+.btn-hover:hover {
+  background-color: purple;
+  color: azure;
+  transition: ease-in-out 0.15s;
+  border-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.fa-earth {
+  position: absolute;
+  top: 1%;
+  left: 75%;
+  font-size: 9.5rem;
+}
+
+/* separators line */
+
+.line-div {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sep-text {
+  margin-top: 2.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+.bottom-line {
+  position: absolute;
+  width: 80px;
+  left: 50%;
+  top: 110%;
+  transform: translate(-50%, -50%);
+
+  border-bottom: 2.2px solid black;
+}
+
+/* articles */
+
+.team {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+
+  
+  margin-bottom: 1rem;
+}
+
+.team:last-of-type {
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  box-shadow: 0px 15px 10px -15px #111; 
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 10px -15px;
+}
+
+.team article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 30%;
+  text-align: center;
+}
+
+.pic-container {
+  border: 1px solid black;
+  overflow: hidden;
+  width: 12vw;
+  height: 26vh;
+  border-radius: 50%;
+  align-self: center;
+}
+
+img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+/* middle thing */
+
+.middle-thing {
+  position: relative;
+  background-color: rebeccapurple;
+  padding: 5rem 0;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.middle-thing .middle-h1 {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: aliceblue;
+  font-size: 2rem;
+}
+
+.middle-thing .bottom-line-middle {
+  position: absolute;
+  width: 95px;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+
+  border-bottom: 2.7px solid black;
+}
+
+.middle-thing .input-container {
+  gap: 0.2rem;
+  align-items: center;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.middle-thing .input-container input {
+  font-size: 1.2rem;
+}
+
+.middle-thing .input-container button {
+  padding: 0.3rem;
+}
+
+html {
+  font-family: "Loto", sans-serif;
+}
+
+/* login form style */
+
+.login-form-style {
+  background-color: whitesmoke;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+
+  padding: 2rem;
+  height: 200px;
+  width: 500px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+
+/* input */
+
+
+.flex-item {
+  display: flex;
+  position: relative;
+ }
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 13.5%;
+  transform: translate(-50%, -50%);
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+i {
+  margin-left: 1rem;
+}
+
+/* padding for i */
+.form-control {
+  margin-left: 6rem;
+  padding: 0.5rem 2rem;
+  width: 90%;
+  font-size: 1.1rem;
+}
+
+
+
+
+
+.btn {
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  background-color: black;
+  color: aliceblue;
+}
+
+/* decoration */
+
+a.purple-h1 {
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: inline-block;
+  background-color: #161916;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* responsive */
