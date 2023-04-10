@@ -25,12 +25,6 @@ public class UserRoleService {
         this.modelMapper = modelMapper;
     }
 
-//    public List<UserRoleViewDto> getAll() {
-//        return this.roleRepository.findAll()
-//                .stream()
-//                .map(r -> this.modelMapper.map(r, UserRoleViewDto.class))
-//                .collect(Collectors.toList());
-//    }
 
     public List<UserRoleModel> findAllRoles() {
         return this.roleRepository.findAll()
