@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>pictures</title>
+    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/galleryStyle.css"/>
+</head>
+
+<body>
+<div>
+    <nav th:replace="~{fragments/navigation}"></nav>
+</div>
+
+
+<main>
+    <section>
+        <ul th:each="picture: ${pictures.getContent()}"
+            th:object="${picture}"
+            class="container">
+            <li>
+                <img
+                        th:src="*{imageUrl}"
+                        alt="img"
+                        loading="lazy"
+                />
+            </li>
+            <li></li>
+        </ul>
+    </section>
+</main>
+
+<div class="pictures-controllers">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item" th:classappend="${pictures.isFirst() ? 'disabled' : ''}">
+                <a th:unless="${pictures.isFirst()}" class="page-link"
+                   th:href="@{/pictures/all(size=${pictures.getSize()}, page=${0})}">First</a>
+                <a th:if="${pictures.isFirst()}" class="page-link" href="#">First</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+            <li class="page-item" th:classappend="${pictures.isLast() ? 'disabled' : ''}">
+                <a th:unless="${pictures.isLast()}" class="page-link"
+                   th:href="@{/pictures/all(size=${pictures.getSize()}, page=${pictures.getTotalPages() - 1})}">Last</a>
+                <a th:if="${pictures.isLast()}" class="page-link" href="#">Last</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<footer class="flex">
+    <section>
+        <h1>Purple Spider</h1>
+        <p>
+            We are the best web gurus you will ever have the pleasure to
+            encounter.We are amazing!
+        </p>
+    </section>
+    <nav class="footer-nav">
+        <ul class="footer-nav-container flex">
+            <li><a href="/" class="link-style">Home</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Contacts</h1>
+        <ul class="contacts">
+            <li>
+                <span>0700 12 345</span>
+            </li>
+            <li>
+                <span> office@purplespider.bg </span>
+            </li>
+            <li>
+                <span> Monday - Friday: 09:00 - 18:00 </span>
+            </li>
+            <li>Sofia Some Place Str. fl.1</li>
+        </ul>
+    </section>
+</footer>
+
+
+</body>
+</html>
