@@ -28,6 +28,7 @@ public class UserService {
                 setFirstName(registrationDTO.getFirstName()).
                 setLastName(registrationDTO.getLastName()).
                 setEmail(registrationDTO.getEmail()).
+                setActive(true).
                 setPassword(passwordEncoder.encode(registrationDTO.getPassword()));
 
         userRepository.save(userEntity);
